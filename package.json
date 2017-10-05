@@ -1,0 +1,34 @@
+{
+  "name": "uquill",
+  "version": "1.0.0",
+  "description": "A utility library",
+  "main": "src/index.mjs",
+  "scripts": {
+    "start": "node $npm_package_main",
+    "test": "mocha -r @std/esm --compilers mjs:@std/esm --recursive --reporter list --colors --inline-diffs --bail --no-deprecation ./src/**/*.spec.mjs ./src/*.spec.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakehamilton/uquill.git"
+  },
+  "keywords": [
+    "uquill",
+    "util",
+    "fp"
+  ],
+  "author": "Jake Hamilton <jehamilton122@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakehamilton/uquill/issues"
+  },
+  "homepage": "https://github.com/jakehamilton/uquill#readme",
+  "devDependencies": {
+    "@std/esm": "^0.11.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.8.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^4.0.0"
+  }
+}
