@@ -39,7 +39,7 @@ import {
 
     Task
 } from 'uquill'
-``
+```
 
 ```shell
 npm i -S uquill @std/esm
