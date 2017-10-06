@@ -5,12 +5,12 @@ const Task = (f, transformations = []) => ({
     // chain :: (b -> c) -> c
     chain: g => g(f()),
     // map :: (b -> c) -> Task (a -> b -> c)
-    map: g => Task(f, transformations.concat(g)),
+    map: g => Task(f, [g, ...transformations]),
     // fork :: (Error -> State) -> (a -> b) -> Task b
     fork: (failure, success) =>
         // @TODO: Improve this
         Task.of(
-            f(failure, compose(success, ...(transformations.reverse())))
+            f(failure, compose.all(success, ...transformations))
         )
 })
 

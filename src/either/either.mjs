@@ -1,3 +1,5 @@
+import curry from '../curry/curry'
+
 import Left from './left'
 import Right from './right'
 
@@ -15,5 +17,13 @@ Either.try = f => {
 
 // Either.of :: a -> Right a
 Either.of = x => Right(x)
+
+// 
+Either.from = curry(
+    (f, g, e) =>
+        e.__type__ === 'left'
+            ? f(e.x)
+            : g(e.x)
+)
 
 export default Either

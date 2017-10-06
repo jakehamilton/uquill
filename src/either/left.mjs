@@ -1,5 +1,7 @@
-// Left :: Left a
+// Left :: a -> Left a
 const Left = x => ({
+    __type__: 'left',
+    x,
     // map :: _ -> Left a
     map: () => Left(x),
     // chain :: _ -> Left a

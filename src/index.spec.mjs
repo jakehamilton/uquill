@@ -9,7 +9,11 @@ import {
     Left,
     Right,
 
-    Task
+    Task,
+
+    Just,
+    Nothing,
+    Maybe
 } from './index'
 
 const should = chai.should()
@@ -25,6 +29,10 @@ describe('uquill ::', function () {
 
         should.exist(Task)
 
+        should.exist(Just)
+        should.exist(Nothing)
+        should.exist(Maybe)
+
         // as default export
         should.exist(uquill)
 
@@ -35,5 +43,9 @@ describe('uquill ::', function () {
         should.exist(uquill.Right)
 
         should.exist(uquill.Task)
+
+        should.exist(uquill.Just)
+        should.exist(uquill.Nothing)
+        should.exist(uquill.Maybe)
     })
 })

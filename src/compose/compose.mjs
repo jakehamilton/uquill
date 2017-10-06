@@ -1,5 +1,7 @@
-const compose = (...fns) => (...xs) =>
-    fns.reverse()
-        .reduce((x, f) => f(...[].concat(x)), xs)
+const compose = (f, g) => (...args) => f(g(...args))
+
+compose.all = (...fns) =>
+    fns.reduce(compose)
+
 
 export default compose
